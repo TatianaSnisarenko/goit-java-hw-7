@@ -1,6 +1,8 @@
 package enumeration_second;
 
 
+import java.util.EnumSet;
+
 public enum Shape {
 
     CIRCLE("Circle"), QUAD("Quad"), TRAPEZOID("Trapezoid"),OVAL("Oval"),TRIANGLE("Triangle");
@@ -17,13 +19,8 @@ public enum Shape {
 
 class ShapeTester{
     public static void main(String[] args) {
+        EnumSet<Shape> shapes = EnumSet.allOf(Shape.class);
 
-        Shape[] shapes = new Shape[5];
-        shapes[0] = Shape.OVAL;
-        shapes[1] = Shape.QUAD;
-        shapes[2] = Shape.TRAPEZOID;
-        shapes[3] = Shape.TRIANGLE;
-        shapes[4] = Shape.CIRCLE;
         for (Shape shape : shapes) {
             System.out.println("Shape name is " + shape.getShapeName());
         }
